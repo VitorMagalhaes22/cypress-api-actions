@@ -32,11 +32,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Install Cypress Binary
-        run: npx cypress install
-
       - name: Give Cypress Execution Permissions
         run: chmod +x node_modules/.bin/cypress
+
+      - name: Install Cypress Binary
+        run: npx cypress install
 
       - name: Run Cypress Tests
         run: npx cypress run --browser chrome
