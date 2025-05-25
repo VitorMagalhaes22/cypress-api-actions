@@ -21,8 +21,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Give Cypress Execution Permissions
+        run: chmod +x node_modules/.bin/cypress
+
       - name: Run Cypress Tests
-        run: ./node_modules/.bin/cypress run --browser chrome
+        run: npx cypress run --browser chrome
 
       - name: Get Allure History
         uses: actions/checkout@v4
